@@ -55,6 +55,7 @@
 Базовая логика метода ioctl()
 -----
 	.. code-block:: C
+	
                         switch(ioctl_cmd) {
                                 case BUFFER_REALLOC:
                                         new_buffer_size = arg;
@@ -100,6 +101,7 @@
 Базовая логика метода lseek()
 ------
 	.. code-block:: C
+	
 			switch (flag) {
 				case SEEK_SET:
 					seek = (f_offset < 0) ? 0 : f_offset;
@@ -117,6 +119,7 @@
 Доступные методы для работы с символьным устройством
 ------
 	.. code-block:: C
+	
 			static struct file_operations hive_fops = {
 				.owner =   THIS_MODULE,
 				.llseek =  &cdev_lseek,
@@ -142,6 +145,7 @@
 
 Операции записи/считывания
 ------
+
                 Open op
                 
                 Write op: Honey, can you please cum to me?
@@ -155,6 +159,7 @@
                         
 Операция ioctr append
 ------
+
                 Open op
 
                 Write op: Honey, can you please cum to me?
