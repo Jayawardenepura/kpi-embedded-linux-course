@@ -99,7 +99,6 @@
 
 Базовая логика метода lseek()
 -----   
-.. code-block:: C
                 switch (flag) {
                         case SEEK_SET:
                                 seek = (f_offset < 0) ? 0 : f_offset;
@@ -116,7 +115,6 @@
         
 Доступные методы для работы с символьным устройством
 ------
-.. code-block:: C
                 static struct file_operations hive_fops = {
                         .owner =   THIS_MODULE,
                         .llseek =  &cdev_lseek,
