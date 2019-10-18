@@ -99,15 +99,15 @@
 
 Базовая логика метода lseek()
 -----   
-	.. code-block:: C
+.. code-block:: C
                 switch (flag) {
-			case SEEK_SET:
+                        case SEEK_SET:
                                 seek = (f_offset < 0) ? 0 : f_offset;
                 break;
                         case SEEK_END:
-				seek = item->length;
+                                seek = item->length;
                 break;
-		}
+                }
 	
 
 Узнать список всех возможных операций (методов) для работы с модулем ядра можно найти в самом модуле ядра.
@@ -116,16 +116,16 @@
         
 Доступные методы для работы с символьным устройством
 ------
-        .. code-block:: C
-                        static struct file_operations hive_fops = {
-                                .owner =   THIS_MODULE,
-                                .llseek =  &cdev_lseek,
-                                .open =    &cdev_open,
-                                .release = &cdev_release,
-                                .read =    &cdev_read,
-                                .write =   &cdev_write,
-                                .unlocked_ioctl = &cdev_ioctl
-                        };
+.. code-block:: C
+                static struct file_operations hive_fops = {
+                        .owner =   THIS_MODULE,
+                        .llseek =  &cdev_lseek,
+                        .open =    &cdev_open,
+                        .release = &cdev_release,
+                        .read =    &cdev_read,
+                        .write =   &cdev_write,
+                        .unlocked_ioctl = &cdev_ioctl
+                };
 
                         
                         
@@ -155,6 +155,7 @@
                         
 Операция ioctr append
 ------
+                Open op
 
                 Write op: Honey, can you please cum to me?
                 
