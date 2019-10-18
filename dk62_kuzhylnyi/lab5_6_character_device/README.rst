@@ -96,9 +96,10 @@
 Зачастую при работе с файлом может потребоваться установить определенное положение каретки относительно начала файла. Для этого необхим метод lseek(...), в который необходимо будет указать положение и соотвествующий файловый дескриптор.
 Данный метод имеет возможность устанавливать определенное положение в файле и становиться в конец файла. Для этого в роли аргументов используются флаги `SEEK_SET` и `SEEK_END`.
 
+
 Базовая логика метода lseek()
 -----   
-        .. code-block:: C
+	.. code-block:: C
                         switch (flag) {
                                 case SEEK_SET:
                                         seek = (f_offset < 0) ? 0 : f_offset;
@@ -111,6 +112,7 @@
 
 Узнать список всех возможных операций (методов) для работы с модулем ядра можно найти в самом модуле ядра.
 Для разных устройств будет своё колличество этих методов.Этот список представляет из себя структуру, содержащую набор указателей на определенные раннее функции.
+        
         
 Доступные методы для работы с символьным устройством
 -----
@@ -139,21 +141,19 @@
 
 Операции записи/считывания
 ----
-        .. code-block:: C
-                        Open op
-                        Write op: Honey, can you please cum to me?
-                        Teleport to start <- lseek(0)
-                        Read op: Honey, can you please cum to me?
-                        Close op
+        Open op
+        Write op: Honey, can you please cum to me?
+        Teleport to start <- lseek(0)
+        Read op: Honey, can you please cum to me?
+        Close op
 
                         
 Операция ioctr append
 ----  
 
-        .. code-block:: C
-                        Write op: Honey, can you please cum to me?
-                        appended: Honey, can you please cum to me?Wow, we made these bees TWERK ! 
-                        Close op
+        Write op: Honey, can you please cum to me?
+        appended: Honey, can you please cum to me?Wow, we made these bees TWERK ! 
+        Close op
 
 
 Выводы
