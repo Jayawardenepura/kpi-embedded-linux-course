@@ -98,31 +98,32 @@
 
 Базовая логика метода lseek()
 -----   
-	switch (flag) {
-		case SEEK_SET:
-			seek = (f_offset < 0) ? 0 : f_offset;
-                break;
-		case SEEK_END:
-			seek = item->length;
-                break;
-	}
+        .. code-block:: C
+                        switch (flag) {
+                                case SEEK_SET:
+                                        seek = (f_offset < 0) ? 0 : f_offset;
+                                break;
+                                case SEEK_END:
+                                        seek = item->length;
+                                break;
+                        }
 	
 
 Узнать список всех возможных операций (методов) для работы с модулем ядра можно найти в самом модуле ядра.
 Для разных устройств будет своё колличество этих методов.Этот список представляет из себя структуру, содержащую набор указателей на определенные раннее функции.
         
-Доступные методы для работы с символьным устройством.
+Доступные методы для работы с символьным устройством
 -----
-                .. code-block:: C
-                                static struct file_operations hive_fops = {
-                                        .owner =   THIS_MODULE,
-                                        .llseek =  &cdev_lseek,
-                                        .open =    &cdev_open,
-                                        .release = &cdev_release,
-                                        .read =    &cdev_read,
-                                        .write =   &cdev_write,
-                                        .unlocked_ioctl = &cdev_ioctl
-                                };
+        .. code-block:: C
+                        static struct file_operations hive_fops = {
+                                .owner =   THIS_MODULE,
+                                .llseek =  &cdev_lseek,
+                                .open =    &cdev_open,
+                                .release = &cdev_release,
+                                .read =    &cdev_read,
+                                .write =   &cdev_write,
+                                .unlocked_ioctl = &cdev_ioctl
+                        };
 
                         
 Базово для поиска имеющегося файла использовался циклический список klist с линейной сложностью O(n). 
@@ -134,25 +135,25 @@
 
         
 Интерпретация работы модуля
-----
+
 
 Операции записи/считывания
 ----
-                .. code-block:: C
-                                Open op
-                                Write op: Honey, can you please cum to me?
-                                Teleport to start <- lseek(0)
-                                Read op: Honey, can you please cum to me?
-                                Close op
+        .. code-block:: C
+                        Open op
+                        Write op: Honey, can you please cum to me?
+                        Teleport to start <- lseek(0)
+                        Read op: Honey, can you please cum to me?
+                        Close op
 
                         
 Операция ioctr append
 ----  
 
-                .. code-block:: C
-                                Write op: Honey, can you please cum to me?
-                                appended: Honey, can you please cum to me?Wow, we made these bees TWERK ! 
-                                Close op
+        .. code-block:: C
+                        Write op: Honey, can you please cum to me?
+                        appended: Honey, can you please cum to me?Wow, we made these bees TWERK ! 
+                        Close op
 
 
 Выводы
