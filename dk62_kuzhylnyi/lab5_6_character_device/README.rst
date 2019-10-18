@@ -100,13 +100,13 @@
 Базовая логика метода lseek()
 -----   
 	.. code-block:: C
-		switch (flag) {
+                switch (flag) {
 			case SEEK_SET:
-				seek = (f_offset < 0) ? 0 : f_offset;
-                        break;
-			case SEEK_END:
+                                seek = (f_offset < 0) ? 0 : f_offset;
+                break;
+                        case SEEK_END:
 				seek = item->length;
-			break;
+                break;
 		}
 	
 
@@ -128,6 +128,7 @@
                         };
 
                         
+                        
 Базово для поиска имеющегося файла использовался циклический список klist с линейной сложностью O(n). 
 Для решения данной задачи этот тип данных не есть максимально эффективным.Следуя поставленной задачи и с целью оптимизации был выбран другой тип данных для работы с символьным устройством - хэш таблицы.
 В роли ключа для поиска необходимого указателя на файл является сам файл. Следовательно отпадает необходимость хранить файловый дескриптор в ноде.
@@ -142,9 +143,13 @@
 Операции записи/считывания
 ------
                 Open op
+                
                 Write op: Honey, can you please cum to me?
+                
                 Teleport to start <- lseek(0)
+                
                 Read op: Honey, can you please cum to me?
+                
                 Close op
 
                         
@@ -152,7 +157,9 @@
 ------
 
                 Write op: Honey, can you please cum to me?
+                
                 appended: Honey, can you please cum to me?Wow, we made these bees TWERK ! 
+                
                 Close op
 
 
