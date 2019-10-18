@@ -138,15 +138,15 @@
 
 Операции записи/считывания
 ----
-
                 .. code-block:: C
                         Open op
                         Write op: Honey, can you please cum to me?
-                        Teleport to start
+                        Teleport to start <- lseek(0)
                         Read op: Honey, can you please cum to me?
                         Close op
 
-Операция append
+                        
+Операция ioctr append
 ----  
 
                 .. code-block:: C
